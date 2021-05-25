@@ -10,6 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
+          token:${{ secrets.GITSTART_BOT_TOKEN }}
           fetch-depth: 1
 
       - name: rebase
