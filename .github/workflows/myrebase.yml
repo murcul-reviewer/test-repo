@@ -26,9 +26,6 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.GITSLICE_TOKEN }}
-          ref: ${{ env.GIT_SLICE_DEFAULT_BRANCH }}
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
