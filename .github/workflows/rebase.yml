@@ -1,8 +1,20 @@
 name: rebase-test
 on:
- pull_request_target:
-  types:[labeled]
-
+  workflow_dispatch:
+    inputs:
+      commitMessage:
+        description: 'Commit message for the client?'
+        required: true
+      overide:
+        description: 'Overide pervious push (force push)? (false/true)'
+        default: 'false'
+        required: false
+      branch:
+        description: 'Which branch should be pushed to the client?'
+        required: true
+      pushPr:
+        description: 'Create a PR with the same title and body on the client side? (false/true)'
+        required: false
 jobs:
   try_comment:
     runs-on: ubuntu-latest
@@ -10,7 +22,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          token:${{ secrets.GITSTART_BOT_TOKEN }}
           fetch-depth: 1
 
       - name: rebase
