@@ -29,7 +29,6 @@ jobs:
         with:
           token: ${{ secrets.GITSLICE_TOKEN }}
           ref: ${{ env.GIT_SLICE_DEFAULT_BRANCH }}
-          repository: 'CoherentCapital/tms-flexcel-optimisation'
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
