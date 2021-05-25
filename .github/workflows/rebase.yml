@@ -16,6 +16,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref || github.ref }}
+          repository: 'CoherentCapital/tms-flexcel-optimisation'
           fetch-depth: 0
 
       - name: rebase
