@@ -27,7 +27,8 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
         with:
-          repository: 'https://github.com/CoherentCapital/tms-flexcel-optimisation'
+          token: ${{ secrets.GITSLICE_TOKEN }}
+          repository: 'CoherentCapital/tms-flexcel-optimisation'
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
